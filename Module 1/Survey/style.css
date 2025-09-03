@@ -1,0 +1,54 @@
+body
+{
+    text-align: center;
+    background-color: navy;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Top
+{
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+}
+
+.Sub-Top
+{
+    text-align: center;
+    color: lightgrey;
+    font-size: 2.1em;
+}
+
+.surveyContainer
+{
+    margin: auto;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 1000px;
+    text-align:left;
+    font-size: 1.5em;
+}
+
+.Dropdown
+{
+    width: 200px;
+}
+
+.radio-button
+{
+    font-size: 0.8em;
+}
+
+.submitting
+{
+    text-align: center;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.2em;
+}

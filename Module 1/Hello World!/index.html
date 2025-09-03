@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1 class="hello">Hello!</h1>
+
+  <form id="nameForm">
+    <label for="firstName">Enter your first name:</label><br />
+    <input type="text" id="firstName" size="50" name="firstName" required /><br /><br />
+
+    <label for="lastName">Enter your last name:</label><br />
+    <input type="text" id="lastName" name="lastName" required /><br /><br />
+
+    <button type="submit">Submit</button> 
+  </form>
+
+  <h2 id="welcomeMessage" class="welcome"></h2>
+
+  <script>
+    const form = document.getElementById('nameForm');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent page reload
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      welcomeMessage.textContent = `Welcome, ${firstName} ${lastName}!`;
+    });
+  </script>
+</body>
+</html>

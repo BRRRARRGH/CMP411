@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VideoGame Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="Top">Video Game Survey</h1>
+    <h2 class="Sub-Top">Thank you for your input!</h2>
+
+    <form class="surveyContainer" id="myForm">
+        <div>
+            <label for="Fav"> Enter your Favorite Game</label><br />
+            <input type="text" id="Fav" name="Fav" required /><br /><br />
+        </div>
+        
+        <div>
+            <label for="Console"> What is your Favorite Console?</label> <br />
+            <select id="Console" name="Console" class="Dropdown">
+                <option value="Select">Select a Console</option>
+                <option value="XBox">XBox</option>
+                <option value="Nintendo Switch">Nintendo Switch</option>
+                <option value="PS5">PS5</option>
+                <option value="Desktop">Desktop</option>
+            </select> <br />
+        </div>
+
+        <p>What type of genres do you play?</p>
+        <div>
+            <input type="checkbox" id="RPG" name="RPG" value="RPG"> 
+            <label for="RPG">RPG</label><br />
+            <input type="checkbox" id="RTS" name="RTS" value="RTS"> 
+            <label for="RTS">RTS</label><br />
+            <input type="checkbox" id="Fighting" name="Fighting" value="Fighting"> 
+            <label for="Fighting">Fighting</label><br />
+            <input type="checkbox" id="RogueLike" name="RogueLike" value="RogueLike"> 
+            <label for="RogueLike">RogueLike</label><br />
+            <input type="checkbox" id="Platformer" name="Platformer" value="Platformer"> 
+            <label for="Platformer">Platformer</label><br />
+            <input type="checkbox" id="Soulslike" name="Soulslike" value="Soulslike"> 
+            <label for="Soulslike">Soulslike</label><br />
+            <input type="checkbox" id="Sandbox" name="Sandbox" value="Sandbox"> 
+            <label for="Sandbox">Sandbox</label><br />
+            <input type="checkbox" id="FPS" name="FPS" value="FPS"> 
+            <label for="FPS">FPS</label><br />
+        </div>
+            
+        <div>
+        <p> Do you perfer Mouse and Keyboard or Contoller?</p>
+        <form class="radio-button">
+            
+            <input type="radio" id="M&K" name="type" value="Mouse and Keyboard"> 
+            <label for="M&K">Mouse and Keyboard</label><br />
+            <input type="radio" id="Controller" name="type" value="Controller"> 
+            <label for="Controller">Controller</label><br />
+            
+        </div>
+
+        
+       
+        <p>Why Did you select M&K or Controller?</p>
+        <div>
+            
+            <textarea name="Why" id="whyMKoC" rows="10" cols="20" required></textarea>
+        </div>
+        
+        <p class="submitting" id="submitter"></p>
+        <button type="submit">Submit</button>
+    </form>
+        <script>
+                const form = document.getElementById('myForm');
+
+            form.addEventListener("submit", function(e){
+                e.preventDefault();
+                document.getElementById("submitter").innerHTML = "Thank you for your submission!";
+
+            });
+            
+        </script>
+</body>
+</html>
