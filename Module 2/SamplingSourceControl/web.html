@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Box Practice</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    
+    <h1 class="Top">Flexbox Assignment Stuffs</h1>
+    <h2 class="Sub-Top">Resizing window does things!</h2>
+    <h3 class="Subber-Top">Less than 992px, 2x2</h3>
+    <h3 class="Subber-Top">Less than 600px, 4x1</h3>
+
+    <div class="flex-container">
+        <div>
+            <p> Here is a link to W3 Schools</p>
+            <a href="https://www.w3schools.com/" target="_blank">W3 Schools Website</a>
+
+
+        </div>
+        <div>
+            <p> Here is a pic of me and Mark</p>
+            <img src="markandTJ.jpg" alt="TJ and Mark in Meysenburg's room" style="width:252px;height:189px;">
+        </div>
+        <div>
+            <p> Here is a video of a waterfall i found on the internet</p>
+            <video width="252" height="189" controls>
+                <source src="actualwaterfall.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div>
+
+        <p>Press this button to get your current location!</p>
+        <button onclick="myFunction()">Click here!</button>
+        <p id="locationfield"></p>
+        </div>
+        <script>
+            const x = document.getElementById("locationfield");
+            function myFunction()
+            {
+                
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(success, error);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+                
+
+                function success(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+                }
+            }
+        </script>
+</body>
+
+</html>
