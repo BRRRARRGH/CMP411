@@ -1,0 +1,36 @@
+body
+{
+    text-align: center;
+    background-color: navy;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-container
+{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 100px;
+    border-style: solid;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 2em;
+    
+}
+.head-column-left
+{
+
+}
+.head-column-right
+{
+
+}
+
+a.link{
+    text-decoration: none;
+    color: white;
+}
