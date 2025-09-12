@@ -8,6 +8,10 @@ body
     align-items: center;
 }
 
+footer{
+    background-color: lightcyan;
+}
+
 .head-container
 {
     display: flex;
@@ -28,7 +32,7 @@ ul
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: lightpink;
 }
 
 ul li a
@@ -48,7 +52,7 @@ ul li a:hover
 .IFrameBox
 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
 }
 
@@ -64,11 +68,63 @@ ul li a:hover
     flex: 30%;
     background-color: darkgray;
     padding: 20px;
+    font-size: 2em;
+}
+
+.flex-box
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-box-column
+{
+    background-color: lightblue;
+    flex: 25%;
+}
+
+.foot-container
+{
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+.foot-container-column
+{
+    border-style: solid;
+    flex: 50%;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+}
+
+.images
+{
+    height: 225;
 }
 
 @media screen and (max-width:992px)
 {
+    .IFrameBox
+    {
+        flex-direction: column;
+    }
+
+    .flex-box
+    {
+        flex-wrap: wrap;
+    }
     
+    .flex-box-column
+    {
+        flex: 50%;
+    }
+    .foot-container
+    {
+        flex-direction: column;
+    }
 }
 
 
@@ -79,6 +135,10 @@ ul li a:hover
         flex-direction: column;
         justify-content: center;
         height: 150px;
+    }
+    .flex-box
+    {
+        flex-direction: column;
     }
 
 }
