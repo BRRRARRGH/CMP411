@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Box Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js"></script>
+</head>
+
+<body>
+    <h1>List Builder</h1>
+    <div class="flex-container">
+        <form class="flex-column" id="firstForm">
+            <h2>Form to Obtain a word and place it in a list</h2>
+            <label for="input"> Word to add:</label>
+            <input type="text" id="input" name="input" required /><br /><br />
+
+            <label for="whichList"> List to add to:</label>
+            <input type="text" id="whichList" name="whichList" required /><br /><br />
+            <button type="submitter">Submit</button>
+        </form>
+
+        <div class="flex-column">
+            <h2>List 1</h2> <br />
+            <p id="List-1-Text"></p>
+        </div>
+
+        <div class="flex-column">
+            <h2>List 2</h2> <br />
+            <p id="List-2-Text"></p>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('firstForm');
+        form.addEventListener("submitter", function(e){
+            document.write("called")
+            e.preventDefault();
+            document.getElementById("List-1-Text").innerHTML = "Thank you for your submission!";
+
+        });
+    </script>
+</body>
+
+</html>
