@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Palindromes</title>
+    <link rel="stylesheet" href="palindromeStyle.css">
+    <script src="palindromeCode.js"></script>
+</head>
+
+<body>
+    <h1>List Builder</h1>
+    <div class="flex-container">
+        <form class="flex-column">
+            <h2>Add to form and check if it's a palindrome!</h2>
+            <label for="input"> Word to check:</label>
+            <input type="text" id="input" name="input" required /><br /><br />
+            <label for="whichList"> List to add to:</label>
+            <input type="text" id="whichList" name="whichList" required /><br /><br />
+            <input type="button" value="submit" onclick="validateAndAdd()">
+        </form>
+
+        <div class="flex-column">
+            <h2>Algorithm 1</h2> <br />
+            <h3>Algorithm Description: </h3>
+            <p></p>
+            <h3 id="List-1-Case">Case Sensitive: False</h3>
+            <p id="List-1-Text"></p>
+            <input type="button" value="Clear List" onclick="clearList1()">
+            <input type="button" value="Clear List and swap Case Sensitivity" onclick="swapCase1()">
+
+        </div>
+
+        <div class="flex-column">
+            <h2>Algorithm 2</h2> <br />
+            <h3>Algorithm Description: </h3>
+            <p></p>
+            <h3 id="List-2-Case">Case Sensitive: False</h3>
+            <p id="List-2-Text"></p>
+            <input type="button" value="Clear List" onclick="clearList2()">
+            <input type="button" value="Clear List and swap Case Sensitivity" onclick="swapCase2()">
+        </div>
+
+        <div class="flex-column">
+            <h2>Algorithm 3</h2> <br />
+            <h3>Algorithm Description: </h3>
+            <p></p>
+            <h3 id="List-3-Case">Case Sensitive: False</h3>
+            <p id="List-3-Text"></p>
+            <input type="button" value="Clear List" onclick="clearList3()">
+            <input type="button" value="Clear List and swap Case Sensitivity" onclick="swapCase3()">
+
+        </div>
+    </div>
+</body>
+
+</html>
