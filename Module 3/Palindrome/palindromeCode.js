@@ -128,7 +128,7 @@ function isPalindrome3()
 {
     word = document.getElementById("input").value;
     myWord = "";
-    if(!Case2)
+    if(!Case3)
     {
         myWord = word.toLowerCase();
     }
@@ -136,18 +136,16 @@ function isPalindrome3()
     {
         myWord = word;
     }
-    alert(myWord);
     return recursioning(myWord);
 }
 
 function recursioning(myString)
 {
-    alert(myString);
     if(myString.length <= 1)
     {
         return "True";
     }
-    if(myString[0] != s[myString.length - 1])
+    if(myString[0] != myString[myString.length - 1])
     {
         return "False";
     }
