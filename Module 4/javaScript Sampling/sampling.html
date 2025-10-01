@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sampling</title>
+    <link rel="stylesheet" href="sampling.css">
+    <script src="sampling.js"></script>
+</head>
+
+<body>
+    <h1>List Builder</h1>
+    <div class="flex-container">
+        <form class="flex-column">
+            <h2>Obtain Info!</h2>
+                <select id="paras">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> <br />
+            <input type="button" value="submit" onclick="FetchData()">
+        </form>
+        <div class="flex-column">
+            <h2>Raw Data</h2> <br />
+            <p id="rawData"></p>
+        </div>
+
+        <div class="flex-column">
+            <h2>Formatted into Paragraphs</h2> <br />
+            <p id="formattedData"></p>
+        </div>
+    </div>
+</body>
+
+</html>
