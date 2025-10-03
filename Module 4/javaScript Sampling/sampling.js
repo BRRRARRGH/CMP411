@@ -2,7 +2,6 @@
 
 async function FetchData()
 {
-    let dropdownValue = document.getElementById("paras").value;
     let format = "";
     let prompt = "https://baconipsum.com/api/?type=all-meat&paras=" + document.getElementById("paras").value;
 
