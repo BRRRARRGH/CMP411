@@ -1,0 +1,42 @@
+body
+{
+    text-align: center;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    color: black;
+}
+
+
+
+.flex-container
+{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+}
+
+.flex-column{
+  flex: 25%;
+}
+
+@media screen and (max-width: 1100px)
+{
+    .flex-container
+    {
+        flex-wrap: wrap;
+    }
+
+    .flex-column
+    {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    .flex-container
+    {
+        flex-direction: column;
+    }
+}
