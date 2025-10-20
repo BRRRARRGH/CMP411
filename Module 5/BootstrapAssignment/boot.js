@@ -1,10 +1,9 @@
 async function FetchData()
 {
-    alert("called");
-    let myLength = document.getElementById("length").value;
-    let minLength = 0;
-    let maxLength = 0;
-        if(myLength == "short")
+    let myLength = document.getElementById("length").value; /* Gets value from dropdown menu of the length of the quote */
+    let minLength = 0; /* Sets minimum Length variable for length of quote, representing characters */
+    let maxLength = 0; /* Sets maximum Length variable for length of quote, representing characters */
+        if(myLength == "short") /* checks the choice of myLength, and alters minLength and maxLength according */
         {
             minLength = 0;
             maxLength = 50;
@@ -19,21 +18,19 @@ async function FetchData()
             minLength = 151;
             maxLength = 400;
         }
-    let prompt = `https://api.quotable.io/quotes/random?tags=famous-quotes&minLength=${minLength}&maxLength=${maxLength}`;
+    
+    /* Creates the prompt for the quotable api for famous quotes, with lengths specified earlier */
+    let prompt = `https://api.quotable.io/quotes/random?tags=famous-quotes&minLength=${minLength}&maxLength=${maxLength}`; 
+    
+    /* prompts the quotable api */
     let myData = await fetch(prompt);
+
+    /* turn the fetch into JSON */
     let myJSON = await myData.json();
-    let stringyJSON = JSON.stringify(myJSON);
-    document.getElementById("quote").innerHTML = stringyJSON;
 
-    let format = "";
-    document.getElementById("rawData").innerHTML = stringyJSON;
-    document.getElementById("formattedData").innerHTML = "";
-
-    for (para in myJSON)
-    {
-        format += '<br/>' + myJSON[para] + '<br/>';
-    }
-    document.getElementById("quote").innerHTML = format;
+    /* Changes the inner HTML of both the quote and author to the fetch's values */
+    document.getElementById("quote").innerHTML = myJSON[0].content;
+    document.getElementById("author").innerHTML = myJSON[0].author;
 
 
 }
