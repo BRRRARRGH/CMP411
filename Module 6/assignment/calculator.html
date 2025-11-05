@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Box Practice</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js"></script>
+</head>
+
+<body>
+    <h1>List Builder</h1>
+    <div class="flex-container">
+        <form class="flex-column" id="firstForm" action="">
+            <h2>Adding Numbers in a Range!</h2>
+            <label for="min"> Minimum:</label>
+            <input type="text" id="min" name="min" required /><br /><br />
+
+            <label for="max"> Maximum:</label>
+            <input type="text" id="max" name="max" required /><br /><br />
+
+            <label for="own"> Add a Number to the List!:</label>
+            <input type="text" id="own" name="own" />
+            <input type="button" id="our" name="our" value="Add" onclick="validate()"/><br /><br />
+
+            <label for="API"> Add a Number to the List Using Random Number API!:</label>
+            <input type="button" id="API" name="API" value="Add" onclick="fetchNumber()"/><br /><br />
+        </form>
+
+        <div class="flex-column">
+            <h2>Numbers in List</h2> <br />
+            <p id="myList"></p>
+            <input type="button" value="Clear List or Change Range" onclick="clearList()">
+        </div>
+
+        <div class="flex-column">
+            <h2>Mathematical Values</h2> <br />
+            <p id="mean">Mean: N/A</p>
+            <p id="median">Median: N/A</p>
+            <p id="mode">Mode: N/A</p>
+
+        </div>
+    </div>
+</body>
+
+</html>

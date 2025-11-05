@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ceasar Cipher</title>
+    <link rel="stylesheet" href="ceasar.css">
+    <script src="ceasar.js"></script>
+</head>
+
+<body>
+    <h1>Ceasar Cipher</h1>
+    <div class="flex-container">
+        <form class="flex-column">
+            <h2>Obtain Info!</h2>
+                <select id="meat">
+                    <option value="all-meat">All Meat</option>
+                    <option value="meat-and-filler">Meat & Filler</option>
+                </select> <br />
+
+                <select id="paras">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> <br />
+
+                 <select id="start">
+                    <option value="1">Start para with "Bacon ipsum dolor sit amet</option>
+                    <option value="0">Don't start para with "Bacon ipsum dolor sit amet</option>
+                </select> <br />
+
+                <input type="button" value="submit" onclick="FetchData()">
+        </form>
+        <div class="flex-column">
+            <h2>Raw Data</h2> <br />
+            <p id="rawData"></p>
+        </div>
+
+        <div class="flex-column">
+            <h2>Formatted into Paragraphs</h2> <br />
+            <p id="formattedData"></p>
+        </div>
+
+        <div class="flex-column">
+            <h2>Through Cipher 1</h2> <br />
+            <p id="cipherText1"></p>
+        </div>
+
+        <div class="flex-column">
+            <h2>Through Cipher 2</h2> <br />
+            <p id="cipherText2"></p>
+        </div>
+
+    </div>
+</body>
+
+</html>
