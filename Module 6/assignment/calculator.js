@@ -46,6 +46,7 @@ function clearList() {
     document.getElementById("mean").innerHTML = "Mean: N/A"; //Sets text for Mean to N/A
     document.getElementById("median").innerHTML = "Median: N/A"; //Sets text for Median to N/A
     document.getElementById("mode").innerHTML = "Mode: N/A"; //Sets text for Mode to N/A
+    numArray.splice(0, numArray.length);
 }
 function validate() {
     if (!document.getElementById("min").disabled) {
@@ -90,7 +91,8 @@ function fetchNumber() {
     });
 }
 function updateData() {
-    numArray.sort(); //sorts inputted Data
+    numArray.sort(function (a, b) { return a - b; }); //sorts inputted Data
+    alert(numArray);
     var mean = NaN; //Instantiates mean variable
     var median = NaN; //Instantiates median variable
     //Mean Calculations
@@ -104,6 +106,8 @@ function updateData() {
     //median calculations
     if (numArray.length % 2 == 0) // checks if array is even
      {
+        alert((numArray[numArray.length / 2]));
+        alert(numArray[(numArray.length / 2) - 1]);
         median = (((numArray[numArray.length / 2]) + (numArray[(numArray.length / 2) - 1])) / 2); // calculates median
     }
     else {

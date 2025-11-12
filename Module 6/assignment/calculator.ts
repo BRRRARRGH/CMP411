@@ -12,6 +12,7 @@ function clearList()  //Clears the List and requires new minimum and maximums to
     (<HTMLInputElement>document.getElementById("mean")).innerHTML = "Mean: N/A"; //Sets text for Mean to N/A
     (<HTMLInputElement>document.getElementById("median")).innerHTML = "Median: N/A"; //Sets text for Median to N/A
     (<HTMLInputElement>document.getElementById("mode")).innerHTML = "Mode: N/A"; //Sets text for Mode to N/A
+    numArray.splice(0, numArray.length);
 }
 
 function validate()//Makes sure the number is valid, and adding it to the list & Html element
@@ -84,7 +85,7 @@ async function fetchNumber() // Failed API request stuff
 
 function updateData() // Updates the mean, median, and mode of the dataset
 {
-    numArray.sort(); //sorts inputted Data
+    numArray.sort((a, b) => a - b); //sorts inputted Data
     let mean : number = NaN; //Instantiates mean variable
     let median : number = NaN; //Instantiates median variable
 
