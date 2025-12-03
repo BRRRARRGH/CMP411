@@ -9,91 +9,23 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Astro v5.13.2" />
-    <title>Chess.com API</title>
+    <title>Chess.com</title>
     <link
       rel="canonical"
-      href="https://getbootstrap.com/docs/5.3/examples/jumbotron/"
+      href="https://getbootstrap.com/docs/5.3/examples/pricing/"
     />
-    <script src="chess.js"></script>
+    <link rel="icon" href="577023.png">
     <script src="../assets/js/color-modes.js"></script>
+    <script src="chessts.js"></script>
+    <script src="chess.js"></script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="theme-color" content="#712cf9" />
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: #0000001a;
-        border: solid rgba(0, 0, 0, 0.15);
-        border-width: 1px 0;
-        box-shadow:
-          inset 0 0.5em 1.5em #0000001a,
-          inset 0 0.125em 0.5em #00000026;
-      }
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-      .bi {
-        vertical-align: -0.125em;
-        fill: currentColor;
-      }
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-      .bd-mode-toggle .bi {
-        width: 1em;
-        height: 1em;
-      }
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
+    <link href="chess.css" rel="stylesheet" />
+
+
   </head>
   <body>
+    <!-- Light or Dark Button in bot right -->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path
@@ -119,6 +51,7 @@
         ></path>
       </symbol>
     </svg>
+    <!-- Light and Dark Cont.  -->
     <div
       class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
     >
@@ -189,60 +122,272 @@
         </li>
       </ul>
     </div>
-    <main>
-      <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom">
-            <img src="577023.png" width="40" height="40">
-            <span class="fs-4">Chess.com API</span>
-        </header>
-        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-          <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-            <p class="col-md-8 fs-4">
-              Using a series of utilities, you can create this jumbotron, just
-              like the one in previous versions of Bootstrap. Check out the
-              examples below for how you can remix and restyle it to your
-              liking.
-            </p>
-            <button class="btn btn-primary btn-lg" type="button" onclick="fetchData()">
-              Example button
-            </button>
-          </div>
+
+
+    <!-- Top Banner  -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check" viewBox="0 0 16 16">
+        <title>Check</title>
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="container py-3">
+      <header>
+        <div
+          class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+        >
+            <span class="fs-4">Chess.com API Project</span>
+          </a>
+          <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a
+              class="me-3 py-2 link-body-emphasis text-decoration-none"
+              href="#searchJump"
+              >Search</a
+            >
+            <a
+              class="me-3 py-2 link-body-emphasis text-decoration-none"
+              href="#topPlayersJump"
+              >Top Players</a
+            >
+            <a
+              class="me-3 py-2 link-body-emphasis text-decoration-none"
+              href="#streamersJump"
+              >Streamers</a
+            >
+            <a class="py-2 link-body-emphasis text-decoration-none" href="#puzzleJump"
+              >Daily puzzle</a
+            >
+          </nav>
         </div>
-        <div class="row align-items-md-stretch">
-          <div class="col-md-6">
-            <div class="h-100 p-5 text-bg-dark rounded-3">
-              <h2>Change the background</h2>
-              <p>
-                Swap the background-color utility and add a `.text-*` color
-                utility to mix up the jumbotron look. Then, mix and match with
-                additional component themes and more.
-              </p>
-              <button class="btn btn-outline-light" type="button">
-                Example button
-              </button>
+
+
+        <!-- Search Function  -->
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal text-body-emphasis" id="searchJump">Search up a Username!</h1>
+          <p class="fs-5 text-body-secondary">Search up a username of your own or pick one of the top players!</p>
+          <input type="text" id="playerID"  /><br /><br />
+            <button
+              type="button"
+              class="w-100 btn btn-lg btn-outline-primary"
+              onClick="findPlayer()"
+          > 
+            Search!
+          </button></a>
+        </div>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="playerSection" style="display: none;">
+          <h2 class="fs-5 text-body-secondary" id="playerUsername"></h2><br/>
+          <h2 class="fs-5 text-body-secondary" id="playerCountry"></h2><br/>
+          <h3 class="fs-5 text-body-secondary">Bullet Rating</h3><br/>
+          <ul id="playerBullet">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <br/>
+          <h3 class="fs-5 text-body-secondary">Blitz Rating</h3><br/>
+          <ul id="playerBlitz">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <br/>
+          <h3 class="fs-5 text-body-secondary">Rapid Rating</h3><br/>
+          <ul id="playerRapid">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <br/>
+          <h2 class="fs-5 text-body-secondary">Last 5 Games</h2><br/>
+          <p class="fs-5 text-body-secondary">Game 1</p><br/>
+          <ul id="game1">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="" id="game1Link" target="_blank">Link to Game</a></li>
+          </ul>
+          <p class="fs-5 text-body-secondary">Game 2</p><br/>
+          <ul id="game2">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="" id="game2Link" target="_blank">Link to Game</a></li>
+          </ul>
+          <p class="fs-5 text-body-secondary">Game 3</p><br/>
+          <ul id="game3">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="" id="game3Link" target="_blank">Link to Game</a></li>
+          </ul>
+          <p class="fs-5 text-body-secondary">Game 4</p><br/>
+          <ul id="game4">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="" id="game4Link" target="_blank">Link to Game</a></li>
+          </ul>
+          <p class="fs-5 text-body-secondary">Game 5</p><br/>
+          <ul id="game5">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="" id="game5Link" target="_blank">Link to Game</a></li>
+          </ul>
+        </div>
+
+      </header>
+
+      <!-- Pricing Boxes  -->
+      <main>
+        <h1 class="display-4 fw-normal text-body-emphasis text-center" id="topPlayersJump">Top Players</h1>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Bullet</h4>
+              </div>
+              <div class="card-body">
+                <ol type="1" id="bulletList" style="text-align: left;">
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                </ol>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-              <h2>Add borders</h2>
-              <p>
-                Or, keep it light and add a border for some added definition to
-                the boundaries of your content. Be sure to look under the hood
-                at the source HTML here as we've adjusted the alignment and
-                sizing of both column's content for equal-height.
-              </p>
-              <button class="btn btn-outline-secondary" type="button">
-                Example button
-              </button>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Blitz</h4>
+              </div>
+              <div class="card-body">
+                <ol type="1" id="blitzList" style="text-align: left;">
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Rapid</h4>
+              </div>
+              <div class="card-body">
+                <ol type="1" id="rapidList" style="text-align: left;">
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                  <li><a href="#searchJump"></a></li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
-        <footer class="pt-3 mt-4 text-body-secondary border-top">
-          &copy; 2025
-        </footer>
-      </div>
-    </main>
+
+
+        <!-- Compare Section  -->
+        <h2 class="display-6 text-center mb-4" id="streamersJump">Current Streamers</h2>
+        <div class="table-responsive">
+          <p id="emergencyStreamer"></p>
+          <table class="table text-center" id="table">
+            <thead>
+              <tr>
+                <th style="width: 25%"></th>
+                <th style="width: 25%">Highest Rating</th>
+                <th style="width: 25%">Country</th>
+                <th style="width: 25%">Stream Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr id="tr1">
+                <th scope="row" class="text-start" id="stream1"></th>
+                <td id="stream1Rating"></td>
+                <td id="stream1Country"></td>
+                <td><a href="" id="stream1Link" target="_blank">Link</a></td>
+              </tr>
+              <tr id="tr2">
+                <th scope="row" class="text-start" id="stream2"></th>
+                <td id="stream2Rating"></td>
+                <td id="stream2Country"></td>
+                <td><a href="" id="stream2Link" target="_blank">Link</a></td>
+              </tr>
+              <tr id="tr3">
+                <th scope="row" class="text-start" id="stream3"></th>
+                <td id="stream3Rating"></td>
+                <td id="stream3Country"></td>
+                <td><a href="" id="stream3Link" target="_blank">Link</a></td>
+              </tr>
+              <tr id="tr4">
+                <th scope="row" class="text-start" id="stream4"></th>
+                <td id="stream4Rating"></td>
+                <td id="stream4Country"></td>
+                <td><a href="" id="stream4Link" target="_blank">Link</a></td>
+              </tr>
+              <tr id="tr5">
+                <th scope="row" class="text-start" id="stream5"></th>
+                <td id="stream5Rating"></td>
+                <td id="stream5Country"></td>
+                <td><a href="" id="stream5Link" target="_blank">Link</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal text-body-emphasis" id="puzzleJump">Daily Puzzle</h1>
+          <p class="fs-5 text-body-secondary" id="puzzleName">
+            
+          </p>
+
+          <button
+            type="button"
+            class="w-100 btn btn-lg btn-outline-primary"
+            id="puzzleLink"
+          > 
+            Go to Daily Puzzle!
+          </button></a>
+        </div>
+      </main>
+
+
+      <!-- Footers   -->
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <p>Made by: TJ Johnson</p>
+        </div>
+      </footer>
+    </div>
     <script
       src="../assets/dist/js/bootstrap.bundle.min.js"
       class="astro-vvvwv3sm"
