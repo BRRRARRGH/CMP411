@@ -36,107 +36,107 @@ async function getPlayerStats(player : string) //gets the stats based off a play
     //Reason why every statement needs a try/catch
     try
     {
-        stats[0].push(parseInt(myJSON.chess_bullet.last.rating))
+        stats[0]!.push(parseInt(myJSON.chess_bullet.last.rating))
     }
     catch
     {
-        stats[0].push(0)
+        stats[0]!.push(0)
     }
     try
     {
-        stats[0].push(parseInt(myJSON.chess_bullet.best.rating))
+        stats[0]!.push(parseInt(myJSON.chess_bullet.best.rating))
     }
     catch
     {
-        stats[0].push(0)
+        stats[0]!.push(0)
     }
     
     try
     {
-        stats[0].push(parseInt(myJSON.chess_bullet.record.win, 10) + parseInt(myJSON.chess_bullet.record.loss, 10) + parseInt(myJSON.chess_bullet.record.draw, 10))
+        stats[0]!.push(parseInt(myJSON.chess_bullet.record.win, 10) + parseInt(myJSON.chess_bullet.record.loss, 10) + parseInt(myJSON.chess_bullet.record.draw, 10))
 
     }
     catch
     {
-        stats[0].push(0)
+        stats[0]!.push(0)
     }
     try
     {
-        stats[0].push(parseInt(myJSON.chess_bullet.record.win, 10) / stats[0][2])
+        stats[0]!.push(parseInt(myJSON.chess_bullet.record.win, 10) / stats[0]![2]!)
     }
-        catch
+    catch
     {
-        stats[0].push(0)
+        stats[0]!.push(0)
     }
 
     try
     {
-        stats[1].push(parseInt(myJSON.chess_blitz.last.rating))
+        stats[1]!.push(parseInt(myJSON.chess_blitz.last.rating))
 
     }
     catch
     {
-        stats[1].push(0)
+        stats[1]!.push(0)
     }
     try
     {
-        stats[1].push(parseInt(myJSON.chess_blitz.best.rating))
+        stats[1]!.push(parseInt(myJSON.chess_blitz.best.rating))
     }
     catch
     {
-        stats[1].push(0)
+        stats[1]!.push(0)
     }
     
     try
     {
-        stats[1].push(parseInt(myJSON.chess_blitz.record.win, 10) + parseInt(myJSON.chess_blitz.record.loss, 10) + parseInt(myJSON.chess_blitz.record.draw, 10))
+        stats[1]!.push(parseInt(myJSON.chess_blitz.record.win, 10) + parseInt(myJSON.chess_blitz.record.loss, 10) + parseInt(myJSON.chess_blitz.record.draw, 10))
     }
     catch
     {
-        stats[1].push(0)
+        stats[1]!.push(0)
     }
     try
     {
-        stats[1].push(parseInt(myJSON.chess_blitz.record.win, 10) / stats[1][2]);
+        stats[1]!.push(parseInt(myJSON.chess_blitz.record.win, 10) / stats[1]![2]!);
 
     }
     catch
     {
-        stats[1].push(0)
+        stats[1]!.push(0)
     }
 
     try
     {
-        stats[2].push(parseInt(myJSON.chess_rapid.last.rating))
+        stats[2]!.push(parseInt(myJSON.chess_rapid.last.rating))
 
     }
     catch
     {
-        stats[2].push(0)
+        stats[2]!.push(0)
     }
     try
     {
-        stats[2].push(parseInt(myJSON.chess_rapid.best.rating))
+        stats[2]!.push(parseInt(myJSON.chess_rapid.best.rating))
     }
     catch
     {
-        stats[2].push(0)
+        stats[2]!.push(0)
     }
     try
     {
-        stats[2].push(parseInt(myJSON.chess_rapid.record.win, 10) + parseInt(myJSON.chess_rapid.record.loss, 10) + parseInt(myJSON.chess_rapid.record.draw, 10))
+        stats[2]!.push(parseInt(myJSON.chess_rapid.record.win, 10) + parseInt(myJSON.chess_rapid.record.loss, 10) + parseInt(myJSON.chess_rapid.record.draw, 10))
     }
     catch
     {
-        stats[2].push(0)
+        stats[2]!.push(0)
     }
     try
     {
-        stats[2].push(parseInt(myJSON.chess_rapid.record.win, 10) / stats[2][2])
+        stats[2]!.push(parseInt(myJSON.chess_rapid.record.win, 10) / stats[2]![2]!)
     }
     catch
     {
-        stats[2].push(0)
+        stats[2]!.push(0)
     }
     return stats; //returns the stats array
 }

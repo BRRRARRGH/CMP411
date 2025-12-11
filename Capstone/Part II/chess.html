@@ -16,8 +16,6 @@
     />
     <link rel="icon" href="577023.png">
     <script src="../assets/js/color-modes.js"></script>
-    <script src="chessts.js"></script>
-    <script src="chess.js"></script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="theme-color" content="#712cf9" />
     <link href="chess.css" rel="stylesheet" />
@@ -171,7 +169,7 @@
             <button
               type="button"
               class="w-100 btn btn-lg btn-outline-primary"
-              onClick="findPlayer()"
+              onClick="callPlayerThroughSearch()"
           > 
             Search!
           </button></a>
@@ -245,67 +243,19 @@
 
       <!-- Pricing Boxes  -->
       <main>
-        <h1 class="display-4 fw-normal text-body-emphasis text-center" id="topPlayersJump">Top Players</h1>
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis text-center" id="topPlayersJump">Leaderboard</h1>
+            <label for="gameTypes" >Pick A game type</label> <br />
+          <select id="gameTypes" name="gameTypes">
+              <option value="">Select a game Type</option>
+          </select> <br />
+        <div class="row row-cols-1 row-cols-md-1 mb-3 text-center ">
           <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Bullet</h4>
+                <h4 class="my-0 fw-normal" id="leaderboardType"></h4>
               </div>
               <div class="card-body">
-                <ol type="1" id="bulletList" style="text-align: left;">
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Blitz</h4>
-              </div>
-              <div class="card-body">
-                <ol type="1" id="blitzList" style="text-align: left;">
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Rapid</h4>
-              </div>
-              <div class="card-body">
-                <ol type="1" id="rapidList" style="text-align: left;">
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
-                  <li><a href="#searchJump"></a></li>
+                <ol type="1" id="leaderboardList" style="text-align: left;">
                 </ol>
               </div>
             </div>
@@ -392,5 +342,7 @@
       src="../assets/dist/js/bootstrap.bundle.min.js"
       class="astro-vvvwv3sm"
     ></script>
+    <script src="chessts.js"></script>
+    <script src="chess.js"></script>
   </body>
 </html>

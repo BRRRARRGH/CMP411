@@ -1,7 +1,16 @@
-async function findPlayer() //checks if id works, and if it does, displays their id, country, ratings, and games
+var leaderboardJSON;
+
+function callPlayerThroughSearch()
 {
-    playerToFind = document.getElementById("playerID").value; //gets the id from input box
+    let player = document.getElementById("playerID").value; //gets the id from input box
     document.getElementById("playerID").value = ""; //resets the input box
+    findPlayer(player);
+
+}
+
+async function findPlayer(player) //checks if id works, and if it does, displays their id, country, ratings, and games
+{
+    let playerToFind = player;
     if(validateInput(playerToFind)) //validates the input - if it works program continues, else, return error mssg. 
     {
         try
@@ -140,20 +149,46 @@ async function getDailyPuzzle() //daily puzzle function
 async function getLeaderboard() //gets top 10 players for bullet, blitz, and rapid
 {
     let leaderboardData = await fetch("https://api.chess.com/pub/leaderboards"); //fetch
-    let leaderboardJSON = await leaderboardData.json(); //json
-    let leaderboardBullet = leaderboardJSON.live_bullet; //gets bullet object
-    let leaderboardBlitz = leaderboardJSON.live_blitz; //gets blitz obj
-    let leaderboardRapid = leaderboardJSON.live_rapid; //gets rapid obj
-    let myBulletList = document.getElementById("bulletList"); //gets the list inside html for bullet
-    let myBlitzList = document.getElementById("blitzList"); //gets the list inside html for blitz
-    let myRapidList = document.getElementById("rapidList"); //gets the list inside html for rapid
+    leaderboardJSON = await leaderboardData.json(); //json
+    let leaderboardKeys = Object.keys(leaderboardJSON); //gets keys of the leaderboard object
+    let gameDropdownMenu = document.getElementById("gameTypes"); //gets html of dropdown menu
+    for(let i = 0; i < leaderboardKeys.length; i++) //loops through keys
+    {
+        option = document.createElement("option"); //creates an option
+        option.value = leaderboardKeys[i]; //sets value and text to key
+        option.textContent = leaderboardKeys[i];
+        gameDropdownMenu.appendChild(option); //adds to dropdown menu
+    }
+
+}
+
+document.getElementById("gameTypes").addEventListener('change', function() { //when dropdown menu changed. 
+    // Get the selected value
+    const selectedValue = this.value; //sets selected value to value chosen
+    
+    let leaderboardGame = leaderboardJSON[selectedValue];
+    let leaderboardList = document.getElementById("leaderboardList");
+    leaderboardList.innerHTML = '';
     for(let i = 0; i < 10; i++) //loops 10 times, adding the top 10 of each category to the list
     {
-        myBulletList.children[i].innerHTML = "Username: " + leaderboardBullet[i].username + "<br>Rating: " + leaderboardBullet[i].score;
-        myBlitzList.children[i].innerHTML = "Username: " + leaderboardBlitz[i].username + "<br>Rating: " + leaderboardBlitz[i].score;
-        myRapidList.children[i].innerHTML = "Username: " + leaderboardRapid[i].username + "<br>Rating: " + leaderboardRapid[i].score;
+        const li = document.createElement('li');
+        li.onclick = function() {findPlayer(leaderboardGame[i].username);};
+        const link = document.createElement('a');
+        link.href = "#searchJump";
+        link.innerHTML = "Username: " + leaderboardGame[i].username + "<br>Rating: " + leaderboardGame[i].score;
+        li.appendChild(link);
+        leaderboardList.appendChild(li);
     }
+
+
+});
+
+function leaderboardFunction()
+{
+    alert("happened");
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function() //upon DOM load, callAllFunctions
 {
